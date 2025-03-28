@@ -1,0 +1,28 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 0;
+    font-family: 'Jersey 15', sans-serif;
+  }
+  
+  .links {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .link:hover {
+    color: gray;
+    text-decoration: underline;
+  }
+
+  
