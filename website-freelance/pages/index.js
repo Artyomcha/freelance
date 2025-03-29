@@ -40,10 +40,12 @@ export default function Index()  {
             {/* ABOUT BOTCLICK*/}
             <section className={styles.aboutSection}>
                 <h2 className={styles.aboutTitle}>About <span className={styles.highlight}>Bot<span>Click</span></span></h2>
-                <p className={styles.aboutText}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vivamus feugiat vitae elementum curae mi facilisis hendrerit. Orci nisi fames scelerisque erat sit id erat tincidunt et adipiscing. Tristique bibendum finibus dapibus ante taciti quis felis potenti pulvinar dignissim sed mollis eget. Tortor et sagittis nisi malesuada maecenas pellentesque.
-                </p>
-                <div className={styles.videoPlaceholder}></div>
+                <div className={styles.text}>
+                  <p className={styles.aboutText}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vivamus feugiat vitae elementum curae mi facilisis hendrerit. Orci nisi fames scelerisque erat sit id erat tincidunt et adipiscing. Tristique bibendum finibus dapibus ante taciti quis felis potenti pulvinar dignissim sed mollis eget. Tortor et sagittis nisi malesuada maecenas pellentesque.
+                  </p>
+                  <div className={styles.videoPlaceholder}></div>
+                </div>
             </section>
             
             {/* FAQ question*/}
