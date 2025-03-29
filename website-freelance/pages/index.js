@@ -32,9 +32,7 @@ export default function Index()  {
                 <div className={styles.logoWrapper}>
                   <Image src={logo} alt="Logo" className={styles.logo} />
                 </div>
-                <p className={styles.description}>
-                    Venenatis primis pellentesque lobortis a massa gravida himenaeos amet elementum adipiscing.
-                </p>
+                <p className={styles.description}>🚀 Welcome to BotClick! Need a custom bot? Tell us your idea, and we’ll bring it to life! 🤖 </p>
             </section>
 
             {/* ABOUT BOTCLICK*/}
@@ -42,7 +40,9 @@ export default function Index()  {
                 <h2 className={styles.aboutTitle}>About <span className={styles.highlight}>Bot<span>Click</span></span></h2>
                 <div className={styles.text}>
                   <p className={styles.aboutText}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vivamus feugiat vitae elementum curae mi facilisis hendrerit. Orci nisi fames scelerisque erat sit id erat tincidunt et adipiscing. Tristique bibendum finibus dapibus ante taciti quis felis potenti pulvinar dignissim sed mollis eget. Tortor et sagittis nisi malesuada maecenas pellentesque.
+                  At BotClick, we specialize in bringing your automation ideas to life! Whether you need a bot to streamline business processes, enhance customer engagement, or manage complex tasks, we’ve got you covered.
+                  Our team of experts is dedicated to creating powerful, efficient, and easy-to-use bots tailored to your specific needs. From concept to deployment, we work closely with you to ensure your vision becomes a reality.
+                  No matter how simple or complex your requirements are, we’ll craft a bot that perfectly fits your goals. Let’s make automation effortless—just reach out, and we’ll take care of the rest!
                   </p>
                   <div className={styles.videoPlaceholder}></div>
                 </div>
@@ -54,7 +54,10 @@ export default function Index()  {
               <div className={styles.accordion}>
                 {questions.map((question, index) => (
                   <div key={index} className={styles.accordionItem} onClick={() => toggleQuestion(index)}>
-                    <div className={styles.question}>{question}</div>
+                    <div className={styles.question}>
+                      {question}
+                      <img src="/assets/Arrow.svg" alt="Arrow" className={`${styles.arrow} ${activeQuestion === index ? styles.arrowActive : ''}`}/>
+                    </div>
                     {activeQuestion === index && (
                       <div className={styles.answer}>This is the answer to {question}.</div>
                     )}

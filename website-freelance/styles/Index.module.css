@@ -6,34 +6,31 @@
 }
 
 .logoSection {
-    margin: 50px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Space between image and text */
 }
 
 .logoWrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-    width: 500px;
-    height: 500px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 500px; /* Adjust as needed */
+  height: auto;
 }
-
 
 .description {
-    max-width: 300px;
-    font-size: 3rem;
-    text-align: center;
+
+  font-size: 2rem;
+  text-align: left;
+  line-height: 1.5;
+  max-width: 400px;
+
 }
-
-
 
 .aboutSection {
     justify-content: space-between;
@@ -53,13 +50,13 @@
 }
 
 .highlight {
-    color: #32CD32;
+    color: #21DA5F;
 }
 
 .aboutText {
-    margin-left: 200px;
-    margin-right: 200px;
-    max-width: 400px;
+    margin-left: 100px;
+    margin-right: 100px;
+    max-width: 500px;
     font-size: 1.5rem;
     text-align: justify;
 }
@@ -104,9 +101,21 @@
   
   .question {
     font-size: 1.2rem;
+    width: 750px;
   }
   
   .answer {
     margin-top: 10px;
-    color: #32CD32;
+    color: #21DA5F;
+  }
+
+  .arrow {
+    margin-left: 650px;
+    transition: transform 0.3s ease;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .arrowActive {
+    transform: rotate(180deg); /* Rotates the arrow when active */
   }
