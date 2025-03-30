@@ -62,6 +62,7 @@
 }
 
 .videoPlaceholder {
+
     width: 400px;
     height: 300px;
     background-color: lightgray;
@@ -70,6 +71,7 @@
 
 
 .faqSection {
+
     width: 100%;
     max-width: 800px;
   }
@@ -119,3 +121,81 @@
   .arrowActive {
     transform: rotate(180deg); /* Rotates the arrow when active */
   }
+
+  @media (max-width: 1024px) {
+    .logo {
+        width: 400px; /* Adjust logo size */
+    }
+
+    .description {
+        font-size: 1.8rem;
+        max-width: 350px;
+    }
+
+    .aboutTitle {
+        font-size: 3rem;
+    }
+
+    .aboutText {
+        font-size: 1rem;
+        margin-left: 0px;
+        margin-right: 50px;
+    }
+
+    .faqTitle {
+        font-size: 3rem;
+    }
+
+    .question {
+        font-size: 1.1rem;
+        width: auto; /* Allow for flexible width */
+    }
+
+    .arrow {
+        margin-left: 580px;
+    }
+}
+
+/* For devices smaller than 768px (phones in portrait mode) */
+@media (max-width: 768px) {
+    .container {
+        gap: 30px; /* Reduce gap between elements */
+    }
+
+    .logo {
+        width: 150px; /* Smaller logo */
+    }
+
+    .description {
+        font-size: 1.2rem;
+        max-width: 320px;
+    }
+
+    .aboutTitle {
+        font-size: 2.5rem;
+    }
+    .aboutText {
+        font-size: 0.7rem;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 200px;
+    }
+
+    .videoPlaceholder{
+      margin-top: 2rem;
+      width:200px;
+      height: 100px;
+    }
+
+    .faqTitle {
+        font-size: 2.5rem;
+    }
+
+    .question {
+        font-size: 1rem;
+    }
+
+    .arrow {
+        margin-left: 350px;
+    }
+}
