@@ -1,0 +1,145 @@
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+.highlightTitle {
+    color: #21DA5F;
+}
+
+.highlight {
+    color: #21DA5F;
+    transition: color 0.2s ease;
+}   
+.highlight:hover{
+    color: #18a045;
+}
+
+.reviewsContainer {
+    padding-top: 50px;
+}
+
+/* .reviewsContainer:nth-child(even) {
+    flex-direction: row-reverse;
+} */
+
+.reviewContainer {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    padding: 0 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    }
+    .cardContainer::after {
+        content: '';
+        width: 50%;
+        align-self: center;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #21DA5F;
+    }
+
+.contentWrapper {
+    display: flex;
+    flex-direction: row;
+}
+    
+.reviewContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 20px; */
+    padding: 30px 20px 0 40px;
+}
+
+.reviewPFPWrapper {
+    display: flex;
+
+    justify-content: space-around;
+}
+
+.reviewPFP {
+    width: 200px;   
+    height: 200px;
+    border-radius: 100px;
+}
+
+.reviewPFPExpand {
+    width: 300px;   
+    height: 300px;
+    border-radius: 150px;
+}
+
+
+.reviewTitle {
+    cursor: default;
+    font-size:3rem;
+    line-height: 5px;
+    margin: 0;
+    margin-top: 20px;
+    transition: color 0.2s ease;
+}
+
+
+
+.reviewText {
+    text-align: justify;
+    font-size: 1.3rem;    
+    margin: 0 0 15px 0;
+}
+
+.expandReview {
+    color: inherit;
+    font-size: 1rem;
+    transition: color 0.2s ease
+}
+
+.expandReview:hover {
+    color: #18a045;
+    cursor: default;    
+}
+
+.directionSwitch {
+    flex-direction: row-reverse;
+}   
+
+.applyButton {
+    font-family: 'Jersey 15', sans-serif;
+    background-color: black;
+    color: #21DA5F;
+    font-size: 2rem;
+    border-radius: 30px;
+    height: 70px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 40px;
+}
+
+.applyButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.applyButton:active {
+    transform: scale(0.95);
+}
+
+.linkReset {
+    text-decoration-line: none;
+}

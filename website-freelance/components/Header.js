@@ -27,7 +27,9 @@ export default function Header() {
       </nav>
 
       {/* Apply Button */}
-      <button className={styles.applyButton}>Apply</button>
+      <div className={styles.applyButtonContainer}>
+        <button className={styles.applyButton}>Apply</button>
+      </div>
 
       {/* Menu Icon */}
       <div className={styles.menuIcon} onClick={toggleMenu}>

@@ -39,7 +39,13 @@
   color: #21DA5F;
 }
 
+.applyButtonContainer {
+  width: 320px;
+ 
+}
+
 .applyButton {
+  float: right;
   font-family: 'Jersey 15', sans-serif;
   background-color: black;
   color: #21DA5F;
