@@ -1,0 +1,152 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 20rem;
+  height: 150px;
+}
+
+.nav {
+  display: flex;
+  gap: 50px;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  justify-content: center;
+  width: 500px;
+}
+
+.navItem {
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navItem:hover {
+  color: #21DA5F;
+}
+
+.applyButton {
+  font-family: 'Jersey 15', sans-serif;
+  background-color: black;
+  color: #21DA5F;
+  font-size: 2rem;
+  border-radius: 30px;
+  height: 70px;
+  width: 150px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.applyButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.applyButton:active {
+  transform: scale(0.95);
+}
+
+/* Menu icon */
+.menuIcon {
+  display: none; /* Hidden on large screens */
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1; /* Make sure it stays behind the menu */
+  display: none;
+}
+
+.overlayVisible {
+  display: block; /* Show the overlay when the menu is visible */
+  z-index: 2;
+}
+
+
+/* Media Queries for small and medium screens */
+@media (max-width: 1024px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .logoContainer {
+    margin-left: 0;
+  }
+  .logo{
+    width: 15rem;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    background-color: #D9D9D9;
+    gap: 20px;
+    border-radius: 30px;
+    padding: 1rem;
+    width: 10rem;
+    z-index: 3; /* Ensure the nav is on top of the overlay */
+  }
+
+  .navVisible {
+    display: flex;
+  }
+
+  .menuIcon {
+    display: block;
+  }
+
+  .applyButton {
+    margin: 0 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .logo{
+    width: 10rem;
+  }
+  .applyButton {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
