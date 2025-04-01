@@ -1,0 +1,157 @@
+.questionsContainer {
+    width: 100%;
+    background-color: white;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
+
+.chatWrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+    background-color: white;
+    height: fit-content;
+    padding-top: 85px;
+    padding-bottom: 30px;
+}
+
+.logoWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: blue; */
+}
+
+.logo {
+    width: 325px;
+    height: 300px;
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    position: relative;
+    width: 550px;
+    height: 620px;
+    background-color: #ffffff;
+    border-radius: 35px;
+    padding: 5px;
+    border-style: solid;
+    border-color: #21DA5F;
+}
+
+.outputContainer {
+    background-color: #ececec;
+    width: calc(100% - 200px);
+    height: fit-content;
+    border-radius: 30px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    padding: 15px;
+    
+}
+
+.outputText {
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: 'Jersey 15';
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.outputUnsatisfied {
+    margin: 0;
+}
+
+.outputDM {
+    font-size: 1.2rem;
+    color: #21DA5F;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+.outputDM:hover {
+    color: #18a045;
+}
+
+.inputContainer {
+    width: calc(100% -20px);
+    height: 60px;
+    padding: 5px;
+    background-color: #eaeaea;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chatInputContainer {
+    width: calc(100% - 110px);
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: none;
+    border-color: #b0b0b0;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 4px 20px;
+}   
+
+.chatInput {
+    width: 100%;
+    height: 100%;
+    border-width: 0;
+    font-size: 1.5rem;
+    font-family: 'Jersey 15';
+}
+
+.chatInput:focus {
+    outline: #ffffff;
+}
+
+.chatInput::placeholder {
+    color: #cfcfcf;
+}
+
+.chatButton {
+    position: relative;
+    background-color: white;
+    width: 57px;
+    height: 57px;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #b0b0b0;
+    border-width: 2px;
+}
+.sendArrow {
+    z-index: 1000;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.sendArrowGreen {
+    z-index: 999;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* opacity: 0; */
+}
+
+.sendArrow:hover {
+    opacity: 0;
+}
+
+.sendArrow:active {
+    opacity: .5;
+}
+

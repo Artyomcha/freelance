@@ -1,0 +1,11 @@
+TODO WEBSITE-FREELANCE
+
+ -  adaptive display on reviews
+ -  questions page
+ -  hero animations
+ -  header animations
+ -  stat page
+ -  apply window
+ -  connect apply window to db
+ -  check legality of operation
+

@@ -4,39 +4,14 @@ import stylesR from '../styles/Reviews.module.css';
 import Image from 'next/image';
 import Head from 'next/head';
 
-
-// function ReviewCard(props, index){
-
-//     const [activeReview, setActiveReview] = useState(0)
-
-//     function toggleReview() {
-//         setActiveReview(activeReview + 1);  
-//     }
-
-//     return(
-//         <div className={stylesR.cardContainer}>
-//             <h3 className={stylesR.reviewTitle}><span className={stylesR.highlight}>{props.title}</span></h3>
-//             <div className={` ${stylesR.contentWrapper} ${index%2 === 1 ? stylesR.directionSwitch : ''}`}>   
-//                 <div className={stylesR.reviewContent}> 
-//                     <p className={stylesR.reviewText}>&ensp;{props.text} <span className={stylesR.highlight}> <span className={stylesR.expandReview} onClick={toggleReview}>Collapse</span></span></p>
-//                 </div>
-//                 <div className={stylesR.reviewPfpWrapper}>  
-//                     <Image src={props.img_src} alt='PFP' className={stylesR.reviewPFP}/>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-
 export default function Reviews(){
 
-    const [activeReview, setActiveReview] = useState(0)
+    const [activeReview, setActiveReview] = useState(NaN)
 
     const toggleReview = (index) => {
-        setActiveReview(activeReview === index ? null : index);
+        setActiveReview(activeReview === index ? NaN : index);
         console.log(index);
     }
-    
     
     const reviewData = 
     [
@@ -107,3 +82,4 @@ export default function Reviews(){
         </>
     );
 }
+
