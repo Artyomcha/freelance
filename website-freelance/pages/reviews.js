@@ -75,7 +75,7 @@ export default function Reviews(){
         
         ))}
         </div>
-        <button className={stylesR.applyButton}>Apply</button>
+            <button className={stylesR.applyButton}>Apply</button>
         </div>
         
         </Layout>
