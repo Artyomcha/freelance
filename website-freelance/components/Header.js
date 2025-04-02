@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/Header.module.css';
+import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../public/assets/LogoBotClick.svg';
 import menuIcon from '../public/assets/menu.svg';
@@ -15,13 +16,15 @@ export default function Header() {
     <header className={styles.header}>
       {/* Logo */}
       <div className={styles.logoContainer}>
-        <Image src={logo} alt="BotClick Logo" className={styles.logo} />
+        <Link href="/">
+          <Image src={logo} alt="BotClick Logo" className={styles.logo} />
+        </Link>
       </div>
       <div className={`${styles.overlay} ${menuVisible ? styles.overlayVisible : ''}`} onClick={toggleMenu}></div>
 
       {/* Navigation */}
       <nav className={`${styles.nav} ${menuVisible ? styles.navVisible : styles.navHidden}`}>
-        <a className={styles.navItem} href="#how-it-works">How does it work?</a>
+        <a className={styles.navItem} href="/info">How does it work?</a>
         <a className={styles.navItem} href="/reviews">Reviews</a>
         <a className={styles.navItem} href="#ask-question">Ask a Question</a>
       </nav>

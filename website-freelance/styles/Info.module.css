@@ -1,0 +1,207 @@
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #21DA5F; /* Light green color */
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: left;
+}
+
+.wrapper {
+    text-align: center;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.heading {
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.serviceList {
+    text-align: left;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+.serviceItem {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: start;
+}
+
+.serviceItem::before {
+    content: "•";
+    color: #21DA5F; /* Green bullet */
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.serviceTitle {
+    color: #21DA5F; /* Green text */
+    font-weight: bold;
+    margin-right: 2rem;
+}
+
+.mainContainer {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: left;
+}
+
+.pageTitle {
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.introduction {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.pricingBox {
+    background: #f1f1f1;
+    padding: 18px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.pricingBox h3 {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+}
+
+.basicTier {
+    color: #21DA5F;
+}
+
+.advancedTier {
+    color: #3498db;
+}
+
+.bespokeTier {
+    color: #e67e22;
+}
+
+.pricingBox p {
+    margin: 6px 0;
+}
+
+
+/* MEDIA QUERIES */
+
+/* For devices smaller than 1024px (Tablets & Small Screens) */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.3rem;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .serviceItem {
+        font-size: 1.2rem;
+    }
+
+    .pricingBox {
+        padding: 15px;
+    }
+}
+
+/* For devices smaller than 768px (Phones & Small Tablets) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .wrapper {
+        max-width: 100%;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .serviceList {
+        padding-left: 15px;
+    }
+
+    .serviceItem {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pricingBox {
+        padding: 12px;
+    }
+}
+
+/* For devices smaller than 480px (Small Phones) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .serviceItem {
+        font-size: 0.9rem;
+    }
+
+    .pricingBox {
+        padding: 10px;
+    }
+}
+
+
+
