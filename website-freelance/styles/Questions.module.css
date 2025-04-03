@@ -1,3 +1,7 @@
+.body {
+    position: relative;
+}
+
 .questionsContainer {
     width: 100%;
     background-color: white;
@@ -13,14 +17,14 @@
     width: 800px;
     background-color: white;
     height: fit-content;
-    padding-top: 85px;
+    padding-top: 30px;
     padding-bottom: 30px;
 }
 
 .logoWrapper {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -80;
+    top: -50;
     z-index: 1000;
     width: fit-content;
     height: fit-content;
@@ -34,27 +38,66 @@
 
 .chatContainer {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
     position: relative;
     width: 550px;
     height: 620px;
     background-color: #ffffff;
     border-radius: 35px;
-    padding: 5px;
+    padding-top: 30px;
     border-style: solid;
     border-color: #21DA5F;
+    box-shadow: 0px 0px 10px #18a045;
+    
+    
 }
 
 .outputContainer {
-    background-color: #ececec;
-    width: calc(100% - 200px);
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    width: calc(100% - 80px);     
+    height: calc(100% - 135px); 
     border-radius: 30px;
-    position: absolute;
-    right: 40px;
-    top: 40px;
-    padding: 15px;
+    position: relative;
+    padding: 40px 40px 15px;
+    /* padding-right: 30px;
+    padding-top: 40px; */
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.message {
+    width: fit-content;
+    min-height: 20px; 
+    min-height: fit-content;
+    max-width: calc(100% - 50px);
+    padding: 20px 15px;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    border-radius: 25px;
+    overflow-x: hidden;
+    flex-shrink: 0;  
+    margin: 0;
+    
+}
+
+.botMessage {
+    flex-direction: column;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    background: #ececec;
+    /* border: 1px solid #b0b0b0; */
+}
+
+.userMessage {
+    flex-direction: column;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+    background: #21DA5F;
+    /* border: 1px solid #18a045; */
     
 }
 
@@ -82,9 +125,12 @@
 }
 
 .inputContainer {
-    width: calc(100% -20px);
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+    width: calc(100% - 20px);
     height: 60px;
-    padding: 5px;
+    padding: 5px;   
     background-color: #eaeaea;
     border-radius: 30px;
     display: flex;
@@ -93,7 +139,7 @@
 }
 
 .chatInputContainer {
-    width: calc(100% - 110px);
+    width: calc(100% - 10px);
     border-radius: 25px;
     border-style: solid;
     border-width: 2px;
@@ -103,7 +149,30 @@
     display: flex;
     align-items: center;
     padding: 4px 20px;
+    padding-right: 3px;
 }   
+
+.sendButton {
+    display: none;
+    background-color: #ececec;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transition: all 0,2s ease;
+}
+
+.sendButton:hover {
+    cursor:pointer;
+    background-color: #21DA5F;
+}
+
+.sendButton:active {
+    background-color: #18a045;
+}
+
+.chatInput:valid~.sendButton{
+    display: block;
+}
 
 .chatInput {
     width: 100%;
@@ -111,47 +180,101 @@
     border-width: 0;
     font-size: 1.5rem;
     font-family: 'Jersey 15';
+    border-radius: 25px;
 }
 
 .chatInput:focus {
-    outline: #ffffff;
+    outline:#ffffff;
 }
 
 .chatInput::placeholder {
     color: #cfcfcf;
 }
 
-.chatButton {
-    position: relative;
-    background-color: white;
-    width: 57px;
-    height: 57px;
-    border-radius: 25px;
-    border-style: solid;
-    border-color: #b0b0b0;
-    border-width: 2px;
+.subTextGreeting {
+    font-size: 1rem;
 }
-.sendArrow {
-    z-index: 1000;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+
+.directMessage {
+    font-size: 1.15rem;
+    color: #21DA5F;
     transition: all 0.2s ease;
+    cursor: default;
 }
 
-.sendArrowGreen {
-    z-index: 999;
+.directMessage:hover {
+    color: #18a045;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.popupDMBG {
     position: absolute;
-    height: 100%;
+    top: -200;
+    left: -25;
+    z-index: 9000;
+    width: calc(100% + 30px);
+    height: calc(100% + 300px);
+    background-color:rgba(176, 176, 176, 0.5);
+}
+
+.popupDM {
+    position: absolute;
+    z-index: 10000;
+    min-height: 400px;
+    min-width: 600px;
+    background-color: #eaeaea;
+    bottom: calc(50% - 200px);
+    left: calc(50% - 300px);
+    border-radius: 40px;
+    border: 1px solid #b0b0b0;
+    box-shadow: 0px 0px 50px #4f4f4f;
+    padding: 20px;
+
+}
+
+.popupNone {
+    display: none;
+}
+
+.popupBlock {
+    display: flex;
+}
+
+.popupCloseButton {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.DMform {
+    position: relative;
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    /* opacity: 0; */
+    height: 100%;
+    background-color: red;
+    align-items: center;
 }
 
-.sendArrow:hover {
-    opacity: 0;
+.DMLineInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
 }
 
-.sendArrow:active {
-    opacity: .5;
+.DMInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.DMTextInput {
+
+}
