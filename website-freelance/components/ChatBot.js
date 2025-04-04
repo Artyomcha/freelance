@@ -117,6 +117,7 @@ const ChatBot = () => {
                 <div className={stylesQ.animationBase}> </div>
             </div>
 
+
             <div className={stylesQ.chatContainer}> 
 
                 <div ref={outputContainerRef} className={stylesQ.outputContainer}>
