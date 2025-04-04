@@ -12,7 +12,7 @@ import { companyInfo } from './CompanyInfo';
 const ChatBot = () => {
     const [chatHistory, setChatHistory] = useState([{
         hideInChat: true,
-        role: "bot",
+        role: "model",
         text: companyInfo
     }]);
     const [DMClick, setDMClick] = useState(0);
@@ -22,7 +22,7 @@ const ChatBot = () => {
 
     //  --> REPLACES "THINKING..." WITH ACTUAL RESPONSE
     const updateHistory = (text) => {
-        setChatHistory(prev => [...prev.filter(msg => msg.text !== "Thinking..."), {role: "bot", text}]);
+        setChatHistory(prev => [...prev.filter(msg => msg.text !== "Thinking..."), {role: "model", text}]);
     }
 
     // --> GENERATING API RESPONSE
@@ -40,16 +40,22 @@ const ChatBot = () => {
             //  --> FOR API RESPONSE
             // !!!! ORIGINALLY LINK IS SUPPOSED TO BE IN .env FILE BUT WHO TF KNOWS WHY IT DOESNT WORK
             // ?? YOU CAN FUCK AROUND W THE API VERSION E.G. ...v1/models/gemini-1.5-pro...
-            // const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=_KEY_', requestOptions);
-            // const data = await response.json();
-            // if (!response.ok) throw new Error(data.error.message || "Something went wrong :(");
-            // const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
+            const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyArloEnU3ZwTr85oM7FREUH2QHWNotCoOM', requestOptions);
+            const data = await response.json();
+            console.log(data)
+            console.log(data.candidates[0].content.parts);
+            if (!response.ok) {
+                const errorMessage = data?.error?.message || "Something went wrong :(";
+                throw new Error(errorMessage);
+              }
+            const apiResponseText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
             
             // --> FOR TESTING WITHOUT API
-            const apiResponseText = "testing this thing"; 
+            //const apiResponseText = "testing this thing"; 
 
-            updateHistory(apiResponseText);
+            updateHistory(apiResponseText.trim());
         } catch (error) {
+            console.log(error);
             updateHistory("Something went wrong :(  we're already working to fix it");
         }
     }

@@ -1,5 +1,5 @@
 export const companyInfo = 
 `FILL THIS LATER
-
+A British Army helicopter was destroyed in a friendly fire incident during the Falklands War, killing its four occupants. In the early hours of 6 June 1982, the Royal Navy destroyer HMS Cardiff was looking for aircraft supplying the Argentine forces on the Falkland Islands. A Gazelle helicopter (example pictured) of the Army Air Corps was making a delivery to British troops on East Falkland. Cardiff's crew assumed that it was hostile and fired two missiles, destroying it. Although Cardiff was suspected, scientific tests on the wreckage were inconclusive. No formal inquiry was held until four years later. Defending their claim that the helicopter had been lost in action, the Ministry of Defence stated that they did not want to upset relatives until they had ascertained how it had been shot down. A board of inquiry identified factors including a lack of communication between the army and the navy, and the army's decision to turn off helicopters' identification friend or foe transmitters. 
 
 `;
