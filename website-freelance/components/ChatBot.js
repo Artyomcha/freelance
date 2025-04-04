@@ -18,6 +18,7 @@ const ChatBot = () => {
     const [DMClick, setDMClick] = useState(0);
     const outputContainerRef = useRef();
     const img_src1 = require('../public/assets/LogoMainNoBG.svg');
+    const img_src2 = require('../public/assets/popupX.svg');
 
     //  --> REPLACES "THINKING..." WITH ACTUAL RESPONSE
     const updateHistory = (text) => {
@@ -63,14 +64,57 @@ const ChatBot = () => {
         console.log(DMClick);
     };
 
+
+    const inputFName = useRef();
+    const inputLName = useRef();
+    const inputEmail = useRef();
+    const inputQuestion = useRef();
+    const [errorMessage, setErrorMessage] = useState('\u0020');
+
+    const validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+      };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const [userFName, userLName, userEmail, userQuestion] = [inputFName.current.value.trim(), inputLName.current.value.trim(), inputEmail.current.value.trim(), inputQuestion.current.value.trim()];
+        setErrorMessage('\u0020');
+        if (((!userFName) || (!userFName)) || ((!userFName) || (!userFName))) setErrorMessage('All fields must be filled');
+        else if (validateEmail(userEmail) === null) setErrorMessage('Invalid email address');
+        else {
+            inputFName.current.value = '';
+            inputLName.current.value = '';
+            inputEmail.current.value = '';
+            inputQuestion.current.value = '';
+        }
+
+        // SEND TO DB
+    };
+
+    const [animation, setAnimation] = useState(0);
+    const [animationEye, setAnimationEye] = useState(0);
+
     return (
     <div className={stylesQ.body}>
-    <div className={stylesQ.questionsContainer}>
+        <div className={stylesQ.questionsContainer}>
 
             <div className={stylesQ.chatWrapper}>
 
-            <div className={stylesQ.logoWrapper}> 
+            {/* <div className={stylesQ.logoWrapper}> 
                 <Image src={img_src1} alt='LOGO' className={stylesQ.logo}/>
+            </div> */}
+            <div className={`  ${stylesQ.logoWrapper1} `}> 
+                <div className={`${stylesQ.animationBlock} ${animation === 1 ? stylesQ.rotateAnimation360Back : ''}`}></div>
+                <div className={`${stylesQ.animationEye} ${stylesQ.leftEye} ${animationEye === 1 ? stylesQ.animationBlink : ''}`}> </div>
+                <div className={`${stylesQ.animationEye} ${stylesQ.rightEye} ${animationEye === 1 ? stylesQ.animationBlink : ''}`}> </div>
+                <div className={`${stylesQ.animationEye} ${stylesQ.secondaryEye} ${stylesQ.leftEye} ${animationEye === 1 ? '' : stylesQ.animationBlink}`}> </div>
+                <div className={`${stylesQ.animationEye} ${stylesQ.secondaryEye} ${stylesQ.rightEye} ${animationEye === 1 ? '' : stylesQ.animationBlink}`}> </div>
+                
+                <div className={stylesQ.animationBase}> </div>
             </div>
 
             <div className={stylesQ.chatContainer}> 
@@ -86,42 +130,51 @@ const ChatBot = () => {
 
                 <div className={stylesQ.inputContainer}>
 
-                <ChatForm chatHistory={chatHistory} setChatHistory={setChatHistory} generateResponse={generateResponse}/>
+                <ChatForm chatHistory={chatHistory} setChatHistory={setChatHistory} generateResponse={generateResponse} animation={animation} setAnimation={setAnimation} animationEye={animationEye} setAnimationEye={setAnimationEye}/>
 
                 </div>
             </div>
             </div>
         </div>
-        {/* <div className={`${stylesQ.popupDMBG} ${DMClick == 0 ? stylesQ.popupNone : stylesQ.popupBlock}`}  onClick={DMHandler}>
-            <div className={`${stylesQ.popupDM} ${DMClick == 0 ? stylesQ.popupNone : stylesQ.popupBlock}`}>
-                <div className={stylesQ.popupCloseButton} onClick={DMHandler}>
+        <div className={`${stylesQ.popupDMBG} ${DMClick == 0 ? stylesQ.popupNone : stylesQ.popupBlock}`}  >
+            
+                
+                <form className={`${stylesQ.popupDM} ${DMClick == 0 ? stylesQ.popupNone : stylesQ.popupBlock}`} onSubmit={handleFormSubmit} action={'#'}> 
 
-                </div>
-                <form className={stylesQ.DMform}> 
+                    <div className={stylesQ.popupCloseButton} onClick={DMHandler}>
+                        <Image className={stylesQ.popupCloseIcon}src={img_src2}/>
+                    </div>
+
+                    <div className={stylesQ.errorContainer}>
+                        <p className={stylesQ.errorText}>{errorMessage}</p>
+                    </div>
+
                     <div className={stylesQ.DMInput}>
                         <div className={stylesQ.DMLineInput}>
                             <div>
-                                <p>Field1</p>
-                                <input/>
+                                <p className={stylesQ.fieldTitle}>First Name</p>
+                                <input className={stylesQ.inputField} ref={inputFName} type={'text'} placeholder={'John'}/>
                             </div>
                             <div>
-                                <p>Field2</p>
-                                <input/>
+                                <p className={stylesQ.fieldTitle}>Last Name</p>
+                                <input className={stylesQ.inputField} ref={inputLName} type={'text'} placeholder={'Doe'}/>
                             </div>
                             <div>
-                                <p>Field3</p>
-                                <input/>
+                                <p className={stylesQ.fieldTitle}>Email</p>
+                                <input className={stylesQ.inputField} ref={inputEmail} type={'text'} placeholder={'johndoe@myemail.com'}/>
                             </div>
                         </div>
                         <div className={stylesQ.DMTextInput}>
-                            <textarea/>
+                            <p className={stylesQ.fieldTitle}>Your Question</p>
+                            <textarea ref={inputQuestion} className={stylesQ.textInputField} placeholder={'What is the meaning of life?'}/>
                         </div>
                         
                     </div>
-                    <button></button>
+                    <button className={stylesQ.formButton}>Send</button>
                 </form>
-            </div>
-        </div> */}
+                
+            
+        </div>
     </div>
     );
 };

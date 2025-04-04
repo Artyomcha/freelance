@@ -31,6 +31,79 @@
     /* background-color: blue; */
 }
 
+.logoWrapper1 {
+    position: absolute;
+    left: -107;
+    top: -50;
+    z-index: 1001;
+    width: 350px;
+    height: 350px;
+    /* background-color: rgba(255, 0, 0, 0.3); */
+}
+
+.logoWrapper1:before {
+    transition: all 1s ease;
+}
+
+.animationBlock {
+    position: absolute;
+    min-width: 50px;
+    min-height: 50px;
+    z-index: 1002;
+    top: 25;
+    right: 44;
+    border-radius: 14px;
+    transition: all 1s ease;
+    background-color: #000;  
+}
+
+.animationEye {
+    position: absolute;
+    min-width: 53px;
+    min-height: 53px;
+    z-index: 1003;
+    border-radius: 8px;
+    background-color: #21DA5F;
+    transition: all 0.4s ease;
+}
+
+.secondaryEye {
+    transition-delay: 1s;
+}
+
+.leftEye {
+    top: 127;
+    right: 108;
+}
+
+.rightEye {
+    top: 127;
+    right: 203;
+}
+
+.animationBase {
+    position: absolute;
+    top: 68px;
+    left: 71px;
+    min-width: 194px;
+    min-height: 190px;
+    z-index: 999;
+    border-radius: 50px;
+    background-color: #000;
+}
+
+.animationBlink {
+    transform: scale(1,0);
+}
+
+.rotateAnimation360 {
+    transform: rotate(360deg);
+}
+
+.rotateAnimation360Back {
+    transform: rotate(-360deg);
+}
+
 .logo {
     width: 325px;
     height: 300px;
@@ -220,6 +293,9 @@
 
 .popupDM {
     position: absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     z-index: 10000;
     min-height: 400px;
     min-width: 600px;
@@ -229,8 +305,9 @@
     border-radius: 40px;
     border: 1px solid #b0b0b0;
     box-shadow: 0px 0px 50px #4f4f4f;
-    padding: 20px;
-
+    padding-bottom: 20px;
+    flex-grow: 0;
+    align-items: center;
 }
 
 .popupNone {
@@ -242,9 +319,9 @@
 }
 
 .popupCloseButton {
+    z-index: 11000;
     height: 50px;
     width: 50px;
-    background-color: red;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -252,29 +329,115 @@
     cursor: pointer;
 }
 
-.DMform {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    align-items: center;
+.popupCloseButton:hover {
+    background-color: #dedede;
+}
+
+.popupCloseButton:active {
+    background-color: #cfcfcf;
+}
+
+.popupCloseIcon {
+    height: 50px;
+    width: 50px;
 }
 
 .DMLineInput {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
+    gap: 30px;
+    padding: 0 40px 0 20px;
 }
+
+.DMTextInput {
+    
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    padding: 0 20px 0 40px;
+    min-height: 100%;
+}
+
 
 .DMInput {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    max-width: 100%;
+    padding: 20px 0;
 }
 
-.DMTextInput {
+.formButton {
+    float: right;
+    font-family: 'Jersey 15', sans-serif;
+    background-color: black;
+    color: #21DA5F;
+    font-size: 2rem;
+    border-radius: 30px;
+    height: 70px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.formButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formButton:active {
+    transform: scale(0.95);
+}
+
+.fieldTitle {
+    margin:0;
+    font-size: 1.2rem;
+}
+
+.inputField {
+    font-family: monospace;
+    width: 160px;
+    padding: 10px;
+    border-color: #cfcfcf;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.inputField::placeholder {
+    color: #cfcfcf;
+}
+
+.textInputField {
+    padding: 10px;
+    border-color: #cfcfcf;
+    border-style: solid;
+    border-radius: 10px;
+    width: 160px;
+    height: calc(100% - 48px);
+    resize: none;
+}
+
+.textInputField::placeholder {
+    color: #cfcfcf;
+}
+
+.inputField:focus {
+    border-color: #18a045;
+    outline: none;
+}
+
+.textInputField:focus{
+    border-color: #18a045;
+    outline: none;
+}
+
+.errorContainer {
+    padding-top: 30px;
+}
+
+.errorText {
+    margin: 0;
+    color:#a70000;
 }

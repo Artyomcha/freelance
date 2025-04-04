@@ -26,7 +26,7 @@ export default function Header() {
       <nav className={`${styles.nav} ${menuVisible ? styles.navVisible : styles.navHidden}`}>
         <a className={styles.navItem} href="/info">How does it work?</a>
         <a className={styles.navItem} href="/reviews">Reviews</a>
-        <a className={styles.navItem} href="#ask-question">Ask a Question</a>
+        <a className={styles.navItem} href="/questions">Ask a Question</a>
       </nav>
 
       {/* Apply Button */}
