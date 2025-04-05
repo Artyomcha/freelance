@@ -1,0 +1,123 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: #d9d9d9;
+    padding: 2rem;
+    border-radius: 30px;
+    width: 700px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: black;
+    text-align: center;
+    font-family: "Jersey 15", sans-serif;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .formRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .leftColumn,
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+  }
+  
+  .form input,
+  .form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: monospace;
+  }
+  
+  .phoneInput {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .phoneInput input:first-child {
+    width: 20px; /* <- +7 input */
+  }
+  
+  .phoneInput input:last-child {
+    flex: 1; /* <- phone number input expands */
+  }
+  
+  .button {
+    background: black;
+    color: #21DA5F;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-family: "Jersey 15", sans-serif;
+    width: 200px;
+    margin-top: 1rem;
+  }
+  
+  .greenText {
+    color: #21DA5F;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px; /* Adjust size of the close icon */
+    height: 30px; /* Adjust size of the close icon */
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .modalContent {
+        width: 300px
+    }
+    .formRow {
+      flex-direction: column;
+    }
+  
+    .leftColumn,
+    .rightColumn {
+      width: 100%;
+    }
+  
+    .button {
+      width: 100%;
+    }
+  }
+  
+  

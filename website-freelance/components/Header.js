@@ -4,13 +4,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../public/assets/LogoBotClick.svg';
 import menuIcon from '../public/assets/menu.svg';
+import ApplyFormModal from './ApplyFormModal'; 
 
 export default function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
 
+  
+
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const toggleModal = () => setIsModalVisible(!isModalVisible);
 
   return (
     <header className={styles.header}>
@@ -31,13 +38,15 @@ export default function Header() {
 
       {/* Apply Button */}
       <div className={styles.applyButtonContainer}>
-        <button className={styles.applyButton}>Apply</button>
+        <button className={styles.applyButton} onClick={toggleModal}>Apply</button>
       </div>
 
       {/* Menu Icon */}
       <div className={styles.menuIcon} onClick={toggleMenu}>
         <Image src={menuIcon} alt="Menu Icon" width={30} height={30} />
       </div>
+
+      <ApplyFormModal isVisible={isModalVisible} onClose={toggleModal} />
     </header>
   );
 }
