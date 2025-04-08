@@ -69,11 +69,15 @@
   }
   
   .phoneInput input:first-child {
-    width: 20px; /* <- +7 input */
+    width: 30px; /* <- +7 input */
   }
   
   .phoneInput input:last-child {
     flex: 1; /* <- phone number input expands */
+  }
+
+  .thankYouMessage{
+    text-align: center;
   }
   
   .button {
