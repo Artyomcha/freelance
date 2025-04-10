@@ -48,12 +48,18 @@ const ChatBot = () => {
                 const errorMessage = data?.error?.message || "Something went wrong :(";
                 throw new Error(errorMessage);
               }
-            const apiResponseText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+            const apiResponseText = data?.candidates?.[0]?.content?.parts?.[0]?.text.trim();
             
             // --> FOR TESTING WITHOUT API
             //const apiResponseText = "testing this thing"; 
 
-            updateHistory(apiResponseText.trim());
+            updateHistory(apiResponseText);
+            const userMessage = history[history.length - 1].parts[0].text;
+            await fetch('/api/log-chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userMessage, botResponse: apiResponseText }),
+            });
         } catch (error) {
             console.log(error);
             updateHistory("Something went wrong :(  we're already working to fix it");
