@@ -85,21 +85,47 @@ const ChatBot = () => {
           );
       };
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        const [userFName, userLName, userEmail, userQuestion] = [inputFName.current.value.trim(), inputLName.current.value.trim(), inputEmail.current.value.trim(), inputQuestion.current.value.trim()];
-        setErrorMessage('\u0020');
-        if (((!userFName) || (!userFName)) || ((!userFName) || (!userFName))) setErrorMessage('All fields must be filled');
-        else if (validateEmail(userEmail) === null) setErrorMessage('Invalid email address');
-        else {
-            inputFName.current.value = '';
-            inputLName.current.value = '';
-            inputEmail.current.value = '';
-            inputQuestion.current.value = '';
-        }
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-        // SEND TO DB
-    };
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+      
+        const data = {
+          firstName: inputFName.current.value,
+          lastName: inputLName.current.value,
+          email: inputEmail.current.value,
+          question: inputQuestion.current.value,
+        };
+      
+        try {
+          const response = await fetch('/api/submit-que', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            // Google Apps Script expects JSON in POST body
+            body: JSON.stringify(data),
+          });
+      
+          // Optional: check if your Apps Script returns success response
+          const result = await response.json();
+          if (response.ok && result.result === 'success') {
+            setIsSubmitted(true); // (optional) if you have a "Thank you" UI
+          } else {
+            alert('Submission failed. Try again.');
+          }
+      
+          // Clear inputs
+          inputFName.current.value = '';
+          inputLName.current.value = '';
+          inputEmail.current.value = '';
+          inputQuestion.current.value = '';
+      
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          alert('An error occurred. Please try again.');
+        }
+      };
 
     const [animation, setAnimation] = useState(0);
     const [animationEye, setAnimationEye] = useState(0);
@@ -146,39 +172,75 @@ const ChatBot = () => {
         <div className={`${stylesQ.popupDMBG} ${DMClick == 0 ? stylesQ.popupNone : stylesQ.popupBlock}`}  >
             
                 
-                <form className={`${stylesQ.popupDM} ${DMClick == 0 ? stylesQ.popupNone : stylesQ.popupBlock}`} onSubmit={handleFormSubmit} action={'#'}> 
+        {isSubmitted ? (
+            <div className={stylesQ.popupDM}>
+                <div className={stylesQ.popupCloseButton} onClick={DMHandler}>
+                <Image className={stylesQ.popupCloseIcon} src={img_src2} />
+                </div>
+                <h2 className={stylesQ.title}>Thank you for applying!</h2>
+                <p>Your application has been successfully submitted. We'll be in touch soon!</p>
+                <button onClick={DMHandler} className={stylesQ.button}>
+                Close
+                </button>
+            </div>
+            ) : (
+            <form
+                className={`${stylesQ.popupDM} ${
+                DMClick == 0 ? stylesQ.popupNone : stylesQ.popupBlock
+                }`}
+                onSubmit={handleFormSubmit}
+                action="#"
+            >
+                <div className={stylesQ.popupCloseButton} onClick={DMHandler}>
+                <Image className={stylesQ.popupCloseIcon} src={img_src2} />
+                </div>
 
-                    <div className={stylesQ.popupCloseButton} onClick={DMHandler}>
-                        <Image className={stylesQ.popupCloseIcon}src={img_src2}/>
-                    </div>
+                <div className={stylesQ.errorContainer}>
+                <p className={stylesQ.errorText}>{errorMessage}</p>
+                </div>
 
-                    <div className={stylesQ.errorContainer}>
-                        <p className={stylesQ.errorText}>{errorMessage}</p>
+                <div className={stylesQ.DMInput}>
+                <div className={stylesQ.DMLineInput}>
+                    <div>
+                    <p className={stylesQ.fieldTitle}>First Name</p>
+                    <input
+                        className={stylesQ.inputField}
+                        ref={inputFName}
+                        type="text"
+                        placeholder="John"
+                    />
                     </div>
-
-                    <div className={stylesQ.DMInput}>
-                        <div className={stylesQ.DMLineInput}>
-                            <div>
-                                <p className={stylesQ.fieldTitle}>First Name</p>
-                                <input className={stylesQ.inputField} ref={inputFName} type={'text'} placeholder={'John'}/>
-                            </div>
-                            <div>
-                                <p className={stylesQ.fieldTitle}>Last Name</p>
-                                <input className={stylesQ.inputField} ref={inputLName} type={'text'} placeholder={'Doe'}/>
-                            </div>
-                            <div>
-                                <p className={stylesQ.fieldTitle}>Email</p>
-                                <input className={stylesQ.inputField} ref={inputEmail} type={'text'} placeholder={'johndoe@myemail.com'}/>
-                            </div>
-                        </div>
-                        <div className={stylesQ.DMTextInput}>
-                            <p className={stylesQ.fieldTitle}>Your Question</p>
-                            <textarea ref={inputQuestion} className={stylesQ.textInputField} placeholder={'What is the meaning of life?'}/>
-                        </div>
-                        
+                    <div>
+                    <p className={stylesQ.fieldTitle}>Last Name</p>
+                    <input
+                        className={stylesQ.inputField}
+                        ref={inputLName}
+                        type="text"
+                        placeholder="Doe"
+                    />
                     </div>
-                    <button className={stylesQ.formButton}>Send</button>
-                </form>
+                    <div>
+                    <p className={stylesQ.fieldTitle}>Email</p>
+                    <input
+                        className={stylesQ.inputField}
+                        ref={inputEmail}
+                        type="text"
+                        placeholder="johndoe@myemail.com"
+                    />
+                    </div>
+                </div>
+                <div className={stylesQ.DMTextInput}>
+                    <p className={stylesQ.fieldTitle}>Your Question</p>
+                    <textarea
+                    ref={inputQuestion}
+                    className={stylesQ.textInputField}
+                    placeholder="What is the meaning of life?"
+                    />
+                </div>
+                </div>
+                <button className={stylesQ.formButton}>Send</button>
+            </form>
+)}
                 
             
         </div>
