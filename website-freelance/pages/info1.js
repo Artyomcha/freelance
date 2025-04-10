@@ -26,34 +26,19 @@ export default function Info(){
          <h2 className={styles.heading}>Our Services</h2>
             <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
-                    <div className={styles.serviceContentWrapper}>
-                        <div className={styles.serviceTitle}>Chatbot Development:</div> 
-                        <div className={styles.serviceText}>We create bots for customer interaction on platforms such as Telegram, Facebook, Slack, and others.</div>
-                    </div>
+                <span className={styles.serviceTitle}>Chatbot Development:</span> We create bots for customer interaction on platforms such as Telegram, Facebook, Slack, and others.
                 </li>
                 <li className={styles.serviceItem}>
-                    <div className={styles.serviceContentWrapper}>
-                        <div className={styles.serviceTitle}>Process Automation:</div> 
-                        <div className={styles.serviceText}>We integrate bots for automating tasks such as data collection, query handling, notifications, and alerts.</div>
-                    </div>
+                <span className={styles.serviceTitle}>Process Automation:</span> We integrate bots for automating tasks such as data collection, query handling, notifications, and alerts.
                 </li>
                 <li className={styles.serviceItem}>
-                    <div className={styles.serviceContentWrapper}>
-                        <div className={styles.serviceTitle}>Custom Bot Development:</div> 
-                        <div className={styles.serviceText}>We build bots tailored to solve unique business challenges, including bots for online services, e-commerce, and customer support.</div>
-                    </div>
+                <span className={styles.serviceTitle}>Custom Bot Development:</span> We build bots tailored to solve unique business challenges, including bots for online services, e-commerce, and customer support.
                 </li>
                 <li className={styles.serviceItem}>
-                    <div className={styles.serviceContentWrapper}>
-                        <div className={styles.serviceTitle}>API Integration:</div> 
-                        <div className={styles.serviceText}>We connect bots to your systems, CRMs, data exchange platforms, and other services.</div>
-                    </div>
+                <span className={styles.serviceTitle}>API Integration:</span> We connect bots to your systems, CRMs, data exchange platforms, and other services.
                 </li>
                 <li className={styles.serviceItem}>
-                    <div className={styles.serviceContentWrapper}>
-                        <div className={styles.serviceTitle}>Bot Support and Improvement:</div> 
-                        <div className={styles.serviceText}>Ongoing maintenance, updates, and optimization of bots to ensure their stability and performance.</div>
-                    </div>
+                <span className={styles.serviceTitle}>Bot Support and Improvement:</span> Ongoing maintenance, updates, and optimization of bots to ensure their stability and performance.
                 </li>
             </ul>
         </div>

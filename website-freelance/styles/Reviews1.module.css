@@ -18,7 +18,7 @@
 }
 
 .reviewsContainer {
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 /* .reviewsContainer:nth-child(even) {
@@ -68,7 +68,7 @@
 
 .reviewPFPWrapper {
     display: flex;
-    padding-top: 20px;
+
     justify-content: space-around;
 }
 
@@ -94,10 +94,7 @@
     transition: color 0.2s ease;
 }
 
-.reviewTitle:hover {
-    color: #18a045;
-    cursor: pointer;    
-}
+
 
 .reviewText {
     text-align: justify;
@@ -113,7 +110,7 @@
 
 .expandReview:hover {
     color: #18a045;
-    cursor: pointer;    
+    cursor: default;    
 }
 
 .directionSwitch {
@@ -145,48 +142,4 @@
 
 .linkReset {
     text-decoration-line: none;
-}
-
-@media (max-width: 800px) {
-    .reviewPFP {
-        height: 150px;
-        width: 150px;
-    }
-
-    .title {
-        text-align: center;
-        
-    }
-
-    .reviewTitle {
-        font-size: 2.2rem;
-    }
-
-    .cardContainer {
-        padding: 0 15px;
-        margin-bottom: 40px;
-    }
-
-    .contentWrapper {
-        display:flex;
-        flex-direction: column-reverse;
-    }
-
-    .reviewContent {
-        padding: 15px 15px 0;
-    }
-}
-
-@media (max-width: 450px) {
-    .title {
-        font-size: 2.6rem;
-    }
-
-    .reviewTitle {
-        font-size: 2rem;
-    }
-
-    .reviewText {
-        font-size: 1rem;
-    }
 }

@@ -44,9 +44,7 @@ export default function Index()  {
                   Our team of experts is dedicated to creating powerful, efficient, and easy-to-use bots tailored to your specific needs. From concept to deployment, we work closely with you to ensure your vision becomes a reality.
                   No matter how simple or complex your requirements are, we’ll craft a bot that perfectly fits your goals. Let’s make automation effortless—just reach out, and we’ll take care of the rest!
                   </p>
-                  <div className={styles.videoWrapper}>
-                    <div className={styles.videoPlaceholder}></div>
-                  </div>
+                  <div className={styles.videoPlaceholder}></div>
                 </div>
             </section>
             

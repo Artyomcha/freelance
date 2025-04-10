@@ -8,8 +8,9 @@
 .logoSection {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px; /* Space between image and text */
+  justify-content: space-between;
+  padding-right: 50px;
+  /* margin-top: 70px; */
 }
 
 .logoWrapper {
@@ -24,10 +25,11 @@
 }
 
 .description {
-
+  margin: 0;
   font-size: 2rem;
   text-align: left;
   line-height: 1.5;
+  box-sizing: border-box;
   max-width: 400px;
 
 }
@@ -35,7 +37,10 @@
 .aboutSection {
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 50px;
+    
 }
 
 .aboutTitle {
@@ -46,7 +51,11 @@
 
 .text{
     display: flex;
-    text-align: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 auto;
+    width: min(900px, 100%);
 }
 
 .highlight {
@@ -54,17 +63,26 @@
 }
 
 .aboutText {
-    margin-left: 100px;
-    margin-right: 100px;
-    max-width: 500px;
+    margin: 0;
+    margin-right: 20px;
+    max-width: 55%;
     font-size: 1.5rem;
     text-align: justify;
 }
 
+.videoWrapper {
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .videoPlaceholder {
 
-    width: 400px;
-    height: 300px;
+    max-width: 400px;
+    max-height: 300px;
+    min-width: 400px;
+    min-height: 300px;
     background-color: lightgray;
     border-radius: 10px;
 }
@@ -103,7 +121,9 @@
   
   .question {
     font-size: 1.2rem;
-    width: 750px;
+    width: min(750px, calc(100% - 10px));
+    display: flex;
+    justify-content: space-between;
   }
   
   .answer {
@@ -112,7 +132,6 @@
   }
 
   .arrow {
-    margin-left: 650px;
     transition: transform 0.3s ease;
     width: 24px;
     height: 24px;
@@ -122,80 +141,133 @@
     transform: rotate(180deg); /* Rotates the arrow when active */
   }
 
-  @media (max-width: 1024px) {
-    .logo {
-        width: 400px; /* Adjust logo size */
-    }
-
-    .description {
-        font-size: 1.8rem;
-        max-width: 350px;
-    }
-
-    .aboutTitle {
-        font-size: 3rem;
-    }
-
-    .aboutText {
-        font-size: 1rem;
-        margin-left: 0px;
-        margin-right: 50px;
-    }
-
-    .faqTitle {
-        font-size: 3rem;
-    }
-
-    .question {
-        font-size: 1.1rem;
-        width: auto; /* Allow for flexible width */
-    }
-
-    .arrow {
-        margin-left: 580px;
-    }
+@media (max-width: 1100px) {
+  .aboutSection {
+    padding: 0 15px;
+  }
 }
 
-/* For devices smaller than 768px (phones in portrait mode) */
-@media (max-width: 768px) {
-    .container {
-        gap: 30px; /* Reduce gap between elements */
-    }
+@media (max-width: 1100px) {
+  .aboutSection {
+    padding: 0 60px;
+    
+  }
 
-    .logo {
-        width: 150px; /* Smaller logo */
-    }
+  .text {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .description {
-        font-size: 1.2rem;
-        max-width: 320px;
-    }
+  .aboutText {
+    max-width: 100%;
+    margin-bottom: 30px;
+    margin-right: 0;
+  }
+}
 
-    .aboutTitle {
-        font-size: 2.5rem;
-    }
-    .aboutText {
-        font-size: 0.7rem;
-        margin-left: 10px;
-        margin-right: 10px;
-        width: 200px;
-    }
+@media (max-width: 880px) {
+  .logo {
+    width: 400px;
+  }
+  .aboutTitle {
+    margin-bottom: 20px;
+  }
+}
 
-    .videoPlaceholder{
-      margin-top: 2rem;
-      width:200px;
-      height: 100px;
-    }
+@media (max-width: 760px) {
+  .logoSection {
+    padding-right: 30px;
+  }
 
-    .faqTitle {
-        font-size: 2.5rem;
-    }
+  .logoWrapper {
+    min-width: calc(55%);
+  }
 
-    .question {
-        font-size: 1rem;
-    }
+  .logo {
+    width: 100%;
+  }
+}
 
-    .arrow {
-        margin-left: 350px;
-    }
+@media (max-width: 600px) {
+  .logoSection {
+    padding-right: 20px;
+    padding-top: 30px;
+  }
+
+  .description {
+    font-size: 1.4rem;
+  }
+
+  .aboutSection {
+    padding: 0 10px;
+  }
+
+  .aboutTitle {
+    font-size: 2.6rem;
+  }
+
+  .faqTitle {
+    font-size: 2.6rem;
+  }
+
+  .aboutText {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media (max-width: 512px) {
+  .aboutSection {
+    padding: 0 10px;
+  }
+
+  .text {
+    padding: 0;
+  }
+  
+}
+
+@media (max-width: 440px) {
+  .logoSection {
+    padding-top: 55px;
+  }
+
+  .text {
+    padding: 0;
+  }
+
+  .videoPlaceholder {
+    max-width: 300px;
+    max-height: 225px;
+    min-width: 300px;
+    min-height: 225px;
+  }
+
+  .aboutTitle {
+    font-size: 2.2rem;
+  }
+
+  .aboutSection {
+    padding: 0 15px;
+  }
+
+  .faqTitle {
+    margin-top: 0;
+    font-size: 2.2rem;
+  }
+
+  .aboutText {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .logoSection {
+    padding-top: 0;
+  }
+  
+  .aboutText {
+    line-height: 1.3rem;
+  }
 }

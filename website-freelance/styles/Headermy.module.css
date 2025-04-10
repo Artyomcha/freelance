@@ -1,27 +1,30 @@
 .header {
   display: flex;
   align-items: center;
+  height: 50px;
   justify-content: space-between;
   background-color: white;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   position: relative;
+  margin-bottom: 70px;
 }
 
-.logoContainer {
-  position: absolute;
-  left: -20px;
-  align-items: center;
-  width: 100px;
-  height: 50px;
-}
 
 .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 20rem;
   height: 150px;
 }
 
 .nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
   display: flex;
   gap: 50px;
   background-color: #D9D9D9;
@@ -42,9 +45,16 @@
   color: #21DA5F;
 }
 
+.container {
+  min-width: 320px;
+  box-sizing: border-box;
+}
+
 .applyButtonContainer {
-  width: 320px;
- 
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding-right: 3rem;
 }
 
 .applyButton {
@@ -87,41 +97,54 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 1; /* Make sure it stays behind the menu */
+  z-index: 0; /* Make sure it stays behind the menu */
   display: none;
 }
 
 .overlayVisible {
   display: block; /* Show the overlay when the menu is visible */
-  z-index: 2;
+  z-index: 10000;
 }
 
+.logoNoBG{
+  display: none;
+}
 
-/* Media Queries for small and medium screens */
+@media (max-width:1300px) {
+  .logo {
+    transition: all 0s;
+    transform: scale(0.7);
+    left: -20px;
+  }
+}
+
+@media (max-width:1300px) {
+  .logo {
+    transition: all 0s;
+    transform: scale(0.6);
+    left: -40px;
+  }
+
+  .nav {
+    max-width: fit-content;
+  }
+}
+
 @media (max-width: 1024px) {
-  .header {
-    justify-content: space-between;
-  }
-
-  .logoContainer {
-    margin-left: 0;
-  }
-  .logo{
-    width: 15rem;
-  }
 
   .nav {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 120px;
-    right: 20px;
+    position: relative;
+    margin: none;
+    top: 80px;
+    right: -780px;
     background-color: #D9D9D9;
     gap: 20px;
     border-radius: 30px;
     padding: 1rem;
     width: 10rem;
-    z-index: 3; /* Ensure the nav is on top of the overlay */
+    z-index: 777777; /* Ensure the nav is on top of the overlay */
   }
 
   .navVisible {
@@ -132,30 +155,73 @@
     display: block;
   }
 
-  .applyButton {
-    margin: 0 20px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .logo{
-    width: 7rem;
-  }
-  .applyButton {
+  .applyButtonContainer {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 30%;
     height: 50px;
-    font-size: 1.5rem;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .applyButton {
+    width: 100%;
+    max-height: 100%;
+  }
+
+  .logo {
+    top: -10px;
+  }
+
+  .menuIcon {
+    position: absolute;
+    right: 40px;
+    top: 50px;
   }
 }
 
+@media (max-width: 830px) {
+  .logo {
+    left: -65px;
+  }
+}
 
+@media (max-width: 620px) {
+  .logo {
+    display: none;
+  }
 
+  .logoNoBG {
+    display: block;
+    width: 160px;
+    top: -15px;
+    left: -20px;
+    transition: all 0s;
+    transform: scale(0.5);
+  }
+}
 
+@media (max-width: 620px) {
+  .applyButtonContainer {
+    width: 35%;
+  }
 
+  .logoNoBG {
+    left: -30px;
+  }
 
+  .menuIcon {
+    right: 20px;
+  }
+}
 
+@media (max-width: 440px) {
+  .applyButton {
+    font-size: 1.7rem;
+  }
 
-
-
-
-
+  .applyButtonContainer {
+    height: 40px;
+  }
+}

@@ -3,7 +3,6 @@
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    padding-top: 40px;
 }
 
 .title {
@@ -22,8 +21,7 @@
     color: #333;
     line-height: 1.6;
     font-weight: 500;
-    text-align: justify;
-
+    text-align: left;
 }
 
 .wrapper {
@@ -44,7 +42,6 @@
     list-style-type: none;
     text-decoration: none;
     padding: 0;
-
 }
 
 .serviceItem {
@@ -56,29 +53,17 @@
     align-items: start;
 }
 
-.serviceContentWrapper {
-    justify-content: space-between;
-    display:flex;
-    width: 100%;
-}
-
-.serviceTitle {
-    color: #21DA5F; /* Green text */
-    font-weight: bold;
-    align-self: flex-start;
-    width: 25%;
-}
-
 .serviceItem::before {
     content: "•";
     color: #21DA5F; /* Green bullet */
     font-size: 20px;
     margin-right: 10px;
-    
 }
 
-.serviceText {
-    width: 70%;
+.serviceTitle {
+    color: #21DA5F; /* Green text */
+    font-weight: bold;
+    margin-right: 2rem;
 }
 
 .mainContainer {
@@ -131,126 +116,92 @@
     margin: 6px 0;
 }
 
-@media (max-width: 1000px) {
+
+/* MEDIA QUERIES */
+
+/* For devices smaller than 1024px (Tablets & Small Screens) */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.3rem;
+    }
+
     .heading {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
-    .wrapper {
-        padding: 0 30px;
-    }
-}
-
-@media (max-width: 800px) {
     .serviceItem {
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 720px) {
-    .serviceContentWrapper {
-        flex-direction: column;
-    }
-
-    .serviceText {
-        width: 100%;
-    }
-
-    .serviceTitle {
-        width: 100%;
-    }
-
-    .description {
-        padding: 0 25px;
-    }
-
-    .title {
-        font-size: 3.4rem;
-        margin-bottom: 35px;
-    }
-}
-
-@media (max-width: 600px) {
-    .title {
-        margin-top: 80px;
-    }
-}
-
-@media (max-width: 490px) {
-
-    .title {
-        margin-bottom: 25px;
-    }
-
-    .pageTitle {
-        font-size: 2.6rem;
-        margin-bottom: 15px;
-    }
-
-    .description {
-        font-size: 1.4rem;
-    }
-
-    .heading {
-        font-size: 2.6rem;
-    }
-
-    .serviceText {
         font-size: 1.2rem;
-        line-height: 1.4rem;
     }
 
-    .mainContainer {
-        padding: 0 15px;
-    }
-
-    .introduction {
-        font-size: 1.4rem;
-        margin-top: 0;
+    .pricingBox {
+        padding: 15px;
     }
 }
 
-@media (max-width: 410px) {
-    .title {
-        margin-top: 0;
-        font-size: 2.4rem;
+/* For devices smaller than 768px (Phones & Small Tablets) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
     }
 
-    .heading {
-        margin-top: 0;
-        font-size: 2.4rem;
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        text-align: center;
     }
 
     .wrapper {
-        padding: 0 10px;
+        max-width: 100%;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .serviceList {
+        padding-left: 15px;
+    }
+
+    .serviceItem {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pricingBox {
+        padding: 12px;
+    }
+}
+
+/* For devices smaller than 480px (Small Phones) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
     }
 
     .description {
         font-size: 1rem;
-        margin-bottom: 40px;
     }
 
-    .serviceTitle {
-        font-size: 1.2rem;
+    .heading {
+        font-size: 1.8rem;
     }
 
-    .serviceText {
-        font-size: 0.95rem;
+    .serviceItem {
+        font-size: 0.9rem;
     }
 
-    .mainContainer {
-        padding: 0 15px;
+    .pricingBox {
+        padding: 10px;
     }
-
-    .pageTitle {
-        font-size: 2.2rem;
-        margin-top: 50px;
-    }
-
-    
 }
-
-
 
 
 

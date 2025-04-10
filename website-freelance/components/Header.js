@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import styles from '../styles/Header.module.css';
+import styles from '../styles/Headermy.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../public/assets/LogoBotClick.svg';
+import logo1 from '../public/assets/LogoMainNoBG.svg';
 import menuIcon from '../public/assets/menu.svg';
 import ApplyFormModal from './ApplyFormModal'; 
 
@@ -25,6 +26,7 @@ export default function Header() {
       <div className={styles.logoContainer}>
         <Link href="/">
           <Image src={logo} alt="BotClick Logo" className={styles.logo} />
+          <Image src={logo1} alt="BotClick Logo" className={`${styles.logo} ${styles.logoNoBG}`} />
         </Link>
       </div>
       <div className={`${styles.overlay} ${menuVisible ? styles.overlayVisible : ''}`} onClick={toggleMenu}></div>
