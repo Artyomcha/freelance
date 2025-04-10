@@ -3,6 +3,7 @@ import styles from '../styles/ApplyFormModal.module.css';
 
 export default function ApplyFormModal({ isVisible, onClose }) {
   const [fullName, setFullName] = useState('');
+  const [countryCode, setCountryCode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
@@ -13,9 +14,11 @@ export default function ApplyFormModal({ isVisible, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const fullPhoneNumber = `${countryCode} ${phoneNumber}`; 
+
     const data = {
       fullName,
-      phoneNumber,
+      phoneNumber: fullPhoneNumber,
       email,
       taskDescription,
     };
@@ -62,7 +65,7 @@ export default function ApplyFormModal({ isVisible, onClose }) {
           <div className={styles.thankYouMessage}>
             <h2 className={styles.title}>Thank you for applying!</h2>
             <p>Your application has been successfully submitted. We'll be in touch soon!</p>
-            <button onClick={onClose} className={styles.button}>
+            <button onClick={onClose} className={styles.button} >
               Close
             </button>
           </div>
@@ -85,8 +88,8 @@ export default function ApplyFormModal({ isVisible, onClose }) {
                     <input
                       type="text"
                       placeholder="+7"
-                      value={phoneNumber}
-                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
                     />
                     <input
                       type="tel"
