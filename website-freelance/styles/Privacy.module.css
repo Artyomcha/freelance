@@ -1,0 +1,14 @@
+.text{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title {
+    padding-left: 20px;
+    font-size: 3rem;
+}
+
+.header {
+    padding-left: 10px;
+    font-size: 2rem; 
+}
