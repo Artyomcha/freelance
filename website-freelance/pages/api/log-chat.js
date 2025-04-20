@@ -24,7 +24,7 @@ async function logToSheet(data) {
     range,
     valueInputOption: 'RAW',
     resource: {
-      values: [[new Date().toISOString()(), data.userMessage, data.botResponse]],
+      values: [[new Date().toISOString(), data.userMessage, data.botResponse]],
     },
   });
 }
