@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import stylesR from '../styles/Reviews.module.css';
 import Image from 'next/image';
 import Head from 'next/head';
-import ApplyFormModal from '..components/ApplyFormModal';
+import ApplyFormModal from '../components/ApplyFormModal';
 
 export default function Reviews(){
 
@@ -29,34 +29,28 @@ export default function Reviews(){
     const reviewData = 
     [
         {
-            title:'Sarah @ TechSolutions Inc',
-            text:'BotClick built an AI-powered customer support bot for us, and the results have been incredible! Response times dropped by 70%, and our team can now focus on complex queries while the bot handles routine questions. Highly recommend their expertise! — Sarah M., Customer Support Manager',
-            expandedText: 'BotClick built an AI-powered customer support bot for us, and the results have been incredible! Before, our team was overwhelmed with repetitive inquiries, leading to slow response times and frustrated customers. But after deploying BotClick’s custom solution, we saw an immediate 70% drop in response times—and the bot handles over 80% of routine queries without human intervention. What really impressed us was how intuitive and natural the bot feels. It understands complex questions, escalates issues seamlessly, and even learns from past interactions to improve over time. Our support team can now focus on high-priority cases, and customer satisfaction scores have jumped by 25%. The BotClick team was amazing to work with—responsive, detail-oriented, and committed to our success. They even provided post-launch tweaks to optimize performance. If you’re looking for a bot that actually delivers, BotClick is the way to go! — Sarah M., Customer Support Manager',            
-            img_src:require("../public/assets/reviewpfp1.jpg")
-        },
-        {   
-            title:'Dr. Emily @ HealthCareConnect',
-            text:'BotClick developed a scheduling bot for our clinic, and it’s been flawless. Patients can book, reschedule, and get reminders without human intervention. It reduced no-shows by 40% and improved patient satisfaction. Will definitely work with them again! — Dr. Emily R., Operations Director',
-            expandedText: 'BotClick developed a scheduling bot for our clinic, and it’s been flawless. Before, our staff spent hours on the phone managing appointments, leading to errors and missed bookings. Now, patients can book, reschedule, or cancel visits 24/7 through an easy-to-use chat interface—with automatic reminders reducing no-shows by 40%. The bot integrates perfectly with our EHR system, updating records in real time and even checking insurance eligibility before confirming appointments. Patients love the convenience, and our front desk team is less stressed. We’ve also seen a 15% increase in appointment adherence thanks to the bot’s proactive follow-ups. BotClick listened to our unique needs in the healthcare space, ensuring HIPAA compliance and a patient-friendly design. Their support team was there every step of the way, from testing to post-launch adjustments. An absolute lifesaver for busy clinics! — Dr. Emily R., Operations Director',
+            title:'Sophia@Sopharmacy',
+            text:`BotClick's pharmacy bot transformed our customer service! It handles medication inquiries, refill requests, and appointment bookings seamlessly. Patients love the instant support. Highly recommended!`,
+            expandedText: `BotClick's pharmacy bot transformed our customer service! It handles medication inquiries, refill requests, and appointment bookings seamlessly. Patients love the instant support. What makes it even better is how it provides multilingual support in Bulgarian and English, integrates with our prescription system for real-time updates, and handles over 200 queries daily without delays. The 24/7 availability has dramatically reduced our after-hours workload. While older staff needed some initial training, BotClick's support team made the transition smooth. For any Bulgarian pharmacy looking to modernize, this solution comes highly recommended.`,            
+            img_src:require("../public/assets/reviewpfp1.png")
+        },  
+        {
+            title:'Andres@Torutööd Tartu',
+            text:`BotClick's plumbing bot is a lifesaver! It schedules emergency repairs, provides DIY tips, and tracks service vans. Our missed calls dropped by 60% - fantastic for Estonian winters!`,
+            expandedText: `BotClick's plumbing bot is a lifesaver! It schedules emergency repairs, provides DIY tips, and tracks service vans. Our missed calls dropped by 60% - fantastic for Estonian winters! The bot prioritizes frozen pipe emergencies during our harsh winters and syncs perfectly with our job tracking system. Its multilingual support in Estonian, Russian and English serves all our customers, while the DIY video library helps with minor issues. We had it up and running in just two weeks during peak season. Though rural location mapping needed slight adjustments initially, BotClick's team resolved it quickly. For Tartu plumbers, this tool is indispensable.`,            
             img_src:require("../public/assets/reviewpfp2.jpg")
         },
-        {   
-            title:'Mark @ FinEdge Banking',
-            text:'Our customers love the BotClick banking assistant! It handles balance inquiries, transaction history, and even fraud alerts in real time. The bot reduced call center volume by 50% and improved response accuracy. A brilliant investment! — Mark T., Head of Digital Banking',
-            expandedText: '',
-            img_src:require("../public/assets/reviewpfp3.jpg")
+        {
+            title:'Žan@Korobač',
+            text:`BotClick's restaurant bot wows our guests! It books tables, explains our Balkan fusion menu, and even suggests wine pairings. Reservations up 40%!`,
+            expandedText: `BotClick's restaurant bot wows our guests! It books tables, explains our Balkan fusion menu, and even suggests wine pairings. Reservations up 40%! The automated reminders have significantly reduced no-shows, while the detailed menu explanations help customers appreciate our ćevapi and Slovenian wine pairings. Integrated with Instagram for promotional bookings, it also handles special dietary requests with ease. During Ljubljana's internet outages, the offline mode keeps basic functions running. The only minor limitation is some inflexibility in daily menu updates, but this barely affects the overall excellent performance. A must for Slovenian restaurants!`,            
+            img_src:require("../public/assets/reviewpfp3.png")
         },
-        {   
-            title:'David @ E-Commerce +',
-            text:'Our BotClick shopping assistant bot has been a game-changer! It guides customers through product selections, answers FAQs instantly, and even recovers abandoned carts. We’ve seen a 30% increase in conversions since deployment. Fantastic work! — David L., Head of Digital Marketing',
-            expandedText: '',
-            img_src:require("../public/assets/reviewpfp4.jpg")
-        },
-        {   
-            title:'Priya @ SwiftLogistics',
-            text:'BotClick’s logistics bot transformed our customer service. It provides instant shipment updates, handles delivery delays, and even processes returns—all without human input. Efficiency is up, and customer complaints are down. 10/10! — Priya K., Logistics Manager',
-            expandedText: '',
-            img_src:require("../public/assets/reviewpfp5.jpg")
+        {
+            title:'Ema@Prestige',
+            text:`BotClick's salon bot is genius! Books appointments, sends style inspiration, and collects feedback. Our cancellation rate dropped by half!`,
+            expandedText: `BotClick's salon bot is genius! Books appointments, sends style inspiration, and collects feedback. Our cancellation rate dropped by half! The automated reminders alone reduced no-shows by 55%, while the feedback system improved our online reviews. Clients love browsing haircut ideas through the Instagram Style Assistant, and the loyalty program integration helps retain customers. Supporting Slovenian, Italian and English makes it perfect for our diverse clientele. While there's occasional lag in mobile app syncing, the web version works perfectly. BotClick even provided ready-made templates for holiday promotions. Ljubljana salons shouldn't hesitate to get this bot!`,            
+            img_src:require("../public/assets/reviewpfp4.png")
         }
     ];
 
@@ -75,7 +69,13 @@ export default function Reviews(){
         <div className={stylesR.reviewsContainer}>
         {reviewData.map((review, index) => (
             <div key={index} className={stylesR.cardContainer}>
-                <a className={stylesR.linkReset} href={'www.google.com'} target={"_blank"} rel={"noopener noreferrer"}><h3 className={stylesR.reviewTitle}><span className={stylesR.highlight}>{review.title}</span></h3></a>
+                {/* <a className={stylesR.linkReset} href={'www.google.com'} target={"_blank"} rel={"noopener noreferrer"}> */}
+                    <h3 className={stylesR.reviewTitle}>
+                        <span className={stylesR.highlightTitle}>
+                            {review.title}
+                        </span>
+                    </h3>
+                {/* </a> */}
                 <div className={` ${stylesR.contentWrapper} ${index%2 === 1 ? stylesR.directionSwitch : ''}`}>   
                     <div className={stylesR.reviewContent}> 
                         <p className={stylesR.reviewText}>&ensp;{activeReview === index ? review.expandedText : review.text} 

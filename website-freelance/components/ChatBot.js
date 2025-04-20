@@ -159,7 +159,7 @@ const ChatBot = () => {
             <div className={stylesQ.chatContainer}> 
 
                 <div ref={outputContainerRef} className={stylesQ.outputContainer}>
-                    <p className={`${stylesQ.message} ${stylesQ.botMessage}`}>&nbsp;Default greeting message. helo <br/> <span className={stylesQ.subTextGreeting} onClick={DMHandler}>If I cant answer your question you can reach us <span className={stylesQ.directMessage}>here</span> </span> </p>
+                    <p className={`${stylesQ.message} ${stylesQ.botMessage}`}>&nbsp;Hi! How can I help you? <br/> <span className={stylesQ.subTextGreeting} onClick={DMHandler}>If I cant answer your question you can reach us <span className={stylesQ.directMessage}>here</span> </span> </p>
                     
                     {chatHistory.map((chat, index) => (
                         <ChatMessage key={index} chat={chat}/>

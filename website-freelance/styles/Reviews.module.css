@@ -95,8 +95,8 @@
 }
 
 .reviewTitle:hover {
-    color: #18a045;
-    cursor: pointer;    
+    /* color: #18a045; */
+    /* cursor: pointer;     */
 }
 
 .reviewText {

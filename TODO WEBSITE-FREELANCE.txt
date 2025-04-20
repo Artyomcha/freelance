@@ -1,11 +1,10 @@
 TODO WEBSITE-FREELANCE
 
- -  adaptive display on reviews
- -  questions page
- -  hero animations
- -  header animations
- -  stat page
- -  apply window
- -  connect apply window to db
- -  check legality of operation
+artyom
+ - hosting
 
+robert
+ - video
+ - google tags 
+
+DEADLINE 20/4

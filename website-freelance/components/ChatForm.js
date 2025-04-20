@@ -37,7 +37,7 @@ const ChatForm = ({chatHistory, setChatHistory, generateResponse, animation, set
 
     return (
         <form onSubmit={handleFormSubmit} action={'#'} className={stylesQ.chatInputContainer}>
-            <input ref={inputRef} type={'text'} className={stylesQ.chatInput} placeholder={'Why do I exist?'} required/>
+            <input ref={inputRef} type={'text'} className={stylesQ.chatInput} placeholder={'Do you offer support after deployment?'} required/>
             <button className={stylesQ.sendButton}></button>
         </form>
 

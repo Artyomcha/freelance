@@ -51,7 +51,9 @@
 
 .text{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
     padding: 0 20px;
     margin: 0 auto;
@@ -65,12 +67,13 @@
 .aboutText {
     margin: 0;
     margin-right: 20px;
-    max-width: 55%;
+    max-width: min(700px, 90%);
     font-size: 1.5rem;
     text-align: justify;
 }
 
 .videoWrapper {
+  align-items: center;
   height: 100%;
   display:flex;
   flex-direction: column;
@@ -79,10 +82,10 @@
 
 .videoPlaceholder {
 
-    max-width: 400px;
-    max-height: 300px;
-    min-width: 400px;
-    min-height: 300px;
+    max-width: min(700px, 90%);
+    /* max-height: 300px; */
+    min-width: min(700px, 90%);
+    /* min-height: 300px; */
     background-color: lightgray;
     border-radius: 10px;
 }
