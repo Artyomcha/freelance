@@ -32,7 +32,7 @@ export default function Reviews(){
             title:'Sophia@Sopharmacy',
             text:`BotClick's pharmacy bot transformed our customer service! It handles medication inquiries, refill requests, and appointment bookings seamlessly. Patients love the instant support. Highly recommended!`,
             expandedText: `BotClick's pharmacy bot transformed our customer service! It handles medication inquiries, refill requests, and appointment bookings seamlessly. Patients love the instant support. What makes it even better is how it provides multilingual support in Bulgarian and English, integrates with our prescription system for real-time updates, and handles over 200 queries daily without delays. The 24/7 availability has dramatically reduced our after-hours workload. While older staff needed some initial training, BotClick's support team made the transition smooth. For any Bulgarian pharmacy looking to modernize, this solution comes highly recommended.`,            
-            img_src:require("../public/assets/reviewpfp1.png")
+            img_src:require("../public/assets/reviewpfp1.jpg")
         },  
         {
             title:'Andres@Torutööd Tartu',
@@ -44,13 +44,13 @@ export default function Reviews(){
             title:'Žan@Korobač',
             text:`BotClick's restaurant bot wows our guests! It books tables, explains our Balkan fusion menu, and even suggests wine pairings. Reservations up 40%!`,
             expandedText: `BotClick's restaurant bot wows our guests! It books tables, explains our Balkan fusion menu, and even suggests wine pairings. Reservations up 40%! The automated reminders have significantly reduced no-shows, while the detailed menu explanations help customers appreciate our ćevapi and Slovenian wine pairings. Integrated with Instagram for promotional bookings, it also handles special dietary requests with ease. During Ljubljana's internet outages, the offline mode keeps basic functions running. The only minor limitation is some inflexibility in daily menu updates, but this barely affects the overall excellent performance. A must for Slovenian restaurants!`,            
-            img_src:require("../public/assets/reviewpfp3.png")
+            img_src:require("../public/assets/reviewpfp3.jpg")
         },
         {
             title:'Ema@Prestige',
             text:`BotClick's salon bot is genius! Books appointments, sends style inspiration, and collects feedback. Our cancellation rate dropped by half!`,
             expandedText: `BotClick's salon bot is genius! Books appointments, sends style inspiration, and collects feedback. Our cancellation rate dropped by half! The automated reminders alone reduced no-shows by 55%, while the feedback system improved our online reviews. Clients love browsing haircut ideas through the Instagram Style Assistant, and the loyalty program integration helps retain customers. Supporting Slovenian, Italian and English makes it perfect for our diverse clientele. While there's occasional lag in mobile app syncing, the web version works perfectly. BotClick even provided ready-made templates for holiday promotions. Ljubljana salons shouldn't hesitate to get this bot!`,            
-            img_src:require("../public/assets/reviewpfp4.png")
+            img_src:require("../public/assets/reviewpfp4.jpg")
         }
     ];
 
