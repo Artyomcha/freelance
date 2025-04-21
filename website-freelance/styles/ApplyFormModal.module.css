@@ -58,9 +58,15 @@
   .form textarea {
     padding: 0.5rem;
     font-size: 1rem;
+    border-color: #cfcfcf;
+    border-style: solid;
     border-radius: 10px;
-    border: 1px solid #ccc;
     font-family: monospace;
+  }
+
+  .form textarea {
+    height: 100%;
+    resize: none;
   }
   
   .phoneInput {

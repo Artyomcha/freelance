@@ -8,7 +8,7 @@ export default function Footer() {
         <a href="/terms" className={styles.link}>Terms & Conditions</a>
         <a href="/privacy" className={styles.link}>Privacy Policy</a>
         <a href="#copyright" className={styles.link}>
-          Copyright © 2025 BotClick.net
+          Copyright © 2025 BotClick.org
         </a>
       </div>
     </footer>

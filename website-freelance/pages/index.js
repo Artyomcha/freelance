@@ -50,7 +50,7 @@ export default function Index()  {
                   &nbsp;&nbsp;No matter how simple or complex your requirements are, we’ll craft a bot that perfectly fits your goals. Let’s make automation effortless—just reach out, and we’ll take care of the rest!
                   </p>
                   <div className={styles.videoWrapper}>
-                    <video className={styles.videoPlaceholder} src="/assets/video.mp4" controls>
+                    <video className={styles.videoPlaceholder} src="/assets/video.mp4" controls preload='metadata'>
                       {/* <source  type="video/mp4"> */}
                     </video>
                   </div>
