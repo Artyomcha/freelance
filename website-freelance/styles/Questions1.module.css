@@ -23,8 +23,8 @@
 
 .logoWrapper {
     position: absolute;
-    left: -80;
-    top: -50;
+    left: -80px;
+    top: -50px;
     z-index: 1000;
     width: fit-content;
     height: fit-content;
@@ -33,8 +33,8 @@
 
 .logoWrapper1 {
     position: absolute;
-    left: -107;
-    top: -50;
+    left: -107px;
+    top: -50px;
     z-index: 1001;
     width: 350px;
     height: 350px;
@@ -50,8 +50,8 @@
     min-width: 50px;
     min-height: 50px;
     z-index: 1002;
-    top: 25;
-    right: 44;
+    top: 25px;
+    right: 44px;
     border-radius: 14px;
     transition: all 1s ease;
     background-color: #000;  
@@ -72,13 +72,13 @@
 }
 
 .leftEye {
-    top: 127;
-    right: 108;
+    top: 127px;
+    right: 108px;
 }
 
 .rightEye {
-    top: 127;
-    right: 203;
+    top: 127px;
+    right: 203px;
 }
 
 .animationBase {
@@ -283,8 +283,8 @@
 
 .popupDMBG {
     position: absolute;
-    top: -200;
-    left: -25;
+    top: -200px;
+    left: -25px;
     z-index: 9000;
     width: calc(100% + 30px);
     height: calc(100% + 300px);

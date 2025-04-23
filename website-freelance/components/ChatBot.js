@@ -8,6 +8,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import ChatMessage from './ChatMessage';
 import { companyInfo } from './CompanyInfo';
+// import ApplyFormModal from './ApplyFormModal'; 
 
 const ChatBot = () => {
     const [chatHistory, setChatHistory] = useState([{
@@ -71,6 +72,7 @@ const ChatBot = () => {
     }, [chatHistory]);
 
     const DMHandler = () => {
+        console.log("DMHANDLER")
         setDMClick(DMClick + 1);
         if (DMClick === 1) setDMClick(0);
         console.log(DMClick);
@@ -135,7 +137,10 @@ const ChatBot = () => {
 
     const [animation, setAnimation] = useState(0);
     const [animationEye, setAnimationEye] = useState(0);
+    // const [isModalVisible, setIsModalVisible] = useState(false);
 
+    // const toggleModal = () => setIsModalVisible(!isModalVisible);
+    
     return (
     <div className={stylesQ.body}>
         <div className={stylesQ.questionsContainer}>
@@ -208,39 +213,39 @@ const ChatBot = () => {
                 <div className={stylesQ.DMInput}>
                 <div className={stylesQ.DMLineInput}>
                     <div>
-                    <p className={stylesQ.fieldTitle}>First Name</p>
+                    {/* <p className={stylesQ.fieldTitle}>First Name</p> */}
                     <input
                         className={stylesQ.inputField}
                         ref={inputFName}
                         type="text"
-                        placeholder="John"
+                        placeholder="First Name"
                     />
                     </div>
                     <div>
-                    <p className={stylesQ.fieldTitle}>Last Name</p>
+                    {/* <p className={stylesQ.fieldTitle}>Last Name</p> */}
                     <input
                         className={stylesQ.inputField}
                         ref={inputLName}
                         type="text"
-                        placeholder="Doe"
+                        placeholder="Last Name"
                     />
                     </div>
-                    <div>
-                    <p className={stylesQ.fieldTitle}>Email</p>
+                    {/* <div> */}
+                    {/* <p className={stylesQ.fieldTitle}>Email</p> */}
                     <input
                         className={stylesQ.inputField}
                         ref={inputEmail}
                         type="text"
-                        placeholder="johndoe@myemail.com"
+                        placeholder="Email"
                     />
-                    </div>
+                    {/* </div> */}
                 </div>
                 <div className={stylesQ.DMTextInput}>
-                    <p className={stylesQ.fieldTitle}>Your Question</p>
+                    {/* <p className={stylesQ.fieldTitle}>Your Question</p> */}
                     <textarea
                     ref={inputQuestion}
                     className={stylesQ.textInputField}
-                    placeholder="What is the meaning of life?"
+                    placeholder="Your Question"
                     />
                 </div>
                 </div>

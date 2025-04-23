@@ -64,14 +64,30 @@
     font-family: monospace;
   }
 
+  .form input:focus {
+    border-color: #18a045;
+    outline: none;
+  }
+
   .form textarea {
     height: 100%;
     resize: none;
   }
+
+  .form textarea:focus {
+    border-color: #18a045;
+    outline: none;
+  }
+  
   
   .phoneInput {
     display: flex;
     gap: 0.5rem;
+  }
+
+  .phoneInput input:focus {
+    border-color: #18a045;
+    outline: none;
   }
   
   .phoneInput input:first-child {
